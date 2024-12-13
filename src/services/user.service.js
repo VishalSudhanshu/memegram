@@ -6,7 +6,12 @@ export const createUserService = async (user) => {
         const newUser = await createUser(user)
         return newUser
     } catch (error) {
-        console.log("Service error",error);
+        if(error.name === "MongoServerError" && error.code === 11000){
+            throw {
+                status: 400, 
+                message: "User with same email or username already exist"
+            }
+        }
         throw error
     }
 }
