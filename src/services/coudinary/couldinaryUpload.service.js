@@ -1,6 +1,6 @@
 import { v2 as cloudinary } from 'cloudinary';
 import fs from "fs";
-import { cloudinaryInstance } from '../config/cloudinaryConfig.js';
+import { cloudinaryInstance } from '../../config/cloudinaryConfig.js';
 
 export const uploadOnCloudinary = async (localFilePath) => {
   try {
