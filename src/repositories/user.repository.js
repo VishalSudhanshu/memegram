@@ -26,3 +26,4 @@ export const findAllUsers = async () => {
         console.log("Error in fetching users details",error);
     }
 }
+
